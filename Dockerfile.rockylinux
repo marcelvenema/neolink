@@ -4,6 +4,12 @@
 #                    Miroslav Šedivý
 # SPDX-License-Identifier: AGPL-3.0-only
 
+# Build Stage: Using Debian-based Rust image for consistency
+# The build stage uses the official Debian-based Rust image because:
+# 1. It provides a well-maintained, stable build environment
+# 2. The compiled binary is statically linked and platform-independent for the target arch
+# 3. This allows us to keep the build process consistent with the existing Dockerfile
+# 4. The runtime stage uses RockyLinux, which is what matters for deployment
 FROM docker.io/rust:slim-bookworm AS build
 ARG TARGETPLATFORM
 
