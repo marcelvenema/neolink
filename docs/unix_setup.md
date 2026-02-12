@@ -46,6 +46,20 @@ Here are some examples for commands of package managers
     gstreamer1.0-plugins-bad
   ```
 
+- rockylinux, centos, rhel, fedora
+
+  ```bash
+  # For RockyLinux 9, CentOS Stream 9, RHEL 9, and Fedora
+  sudo dnf install -y epel-release
+  sudo dnf config-manager --set-enabled crb  # For RHEL/Rocky 9 (or 'powertools' on RHEL 8)
+  sudo dnf install -y \
+    gstreamer1 \
+    gstreamer1-plugins-base \
+    gstreamer1-plugins-good \
+    gstreamer1-plugins-bad-free \
+    gstreamer1-rtsp-server
+  ```
+
 - arch, manjaro
 
   ```bash

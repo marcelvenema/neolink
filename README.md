@@ -66,12 +66,26 @@ sudo apt install \
   libssl
 ```
 
+- **RockyLinux/CentOS/RHEL/Fedora**: These packages should work
+
+```bash
+sudo dnf install -y epel-release
+sudo dnf config-manager --set-enabled crb  # For RHEL/Rocky 9 (or 'powertools' on RHEL 8)
+sudo dnf install -y \
+  gstreamer1 \
+  gstreamer1-plugins-base \
+  gstreamer1-plugins-good \
+  gstreamer1-plugins-bad-free \
+  gstreamer1-rtsp-server
+```
+
 - **Windows**: You may also need to
   [install openssl](https://wiki.openssl.org/index.php/Binaries)
 - **Macos**: You may also need to
   [install openssl](https://wiki.openssl.org/index.php/Binaries) or
   `brew install openssl@1.1`
 - **Ubuntu/Debian**: Install the `libssl` package
+- **RockyLinux/CentOS/RHEL/Fedora**: OpenSSL is typically included in the base system
 
 Make a config file see below.
 
